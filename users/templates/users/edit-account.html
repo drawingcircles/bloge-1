@@ -1,0 +1,25 @@
+{% extends 'projects/main.html' %}
+{% block content %} 
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+        
+      <h2>Edit Account</h2>
+      <p class="lead"></p>
+    </div>
+    <main class="formPage my-x1">
+      <div class="content-box">
+          <div class="formWrapper">
+              <form class="mx-3 form " method="post" action="">
+                  {% csrf_token %}
+                  {{form.as_p}}
+                  <input class="w-100 btn btn-lg btn-primary text-white form-control" type="submit" value="Update" placeholder="Update"><a href="{% url 'account' %}" ></a></input>
+                </form>
+          </div>
+      </div>
+    </main>
+      </div>
+    </div>
+  </main>
+
+  {% endblock %}

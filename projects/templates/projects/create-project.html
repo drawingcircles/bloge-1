@@ -1,0 +1,42 @@
+{% extends 'projects/main.html' %}
+{% block content %} 
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <h2>Create A Post</h2>
+      <p class="lead"></p>
+    </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3"></h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label" id="title">Title</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid title is required.
+              </div>
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Upload Cover Image</label>
+                <input class="form-control" type="file" id="formFile">
+              </div>
+              
+            <div class="col-12">
+              <label for="username" class="form-label">Body</label>
+              <div class="input-group has-validation">
+                
+            <textarea type="text" class="form-control" rows="8" cols="4" id="username" placeholder="Write your blog here.. " required></textarea>
+              <div class="invalid-feedback">
+                  The body is required.
+                </div>
+              </div>
+            </div>
+          <hr class="my-4">
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Post</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  {% endblock %}

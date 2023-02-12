@@ -1,0 +1,38 @@
+{% extends 'projects/main.html' %}
+{% block content%}
+  <main class="container pt-3" id="user-projects-list">
+    <h1 class="visually-hidden"></h1>
+    <div class="px-4 py-5 my-5 text-center">
+      <div class="row">
+        <img src="{{profile.imageURL}}"  class="col-4 bg-light rounded ms-5 " alt="" alt="...">
+        <div class="col me-5 mt-5 pe-5 float-start">
+          <h1 class="display-5 fw-bold ">{{profile.name}}</h1>
+          <div class="col-lg-6 mx-auto mb-5">
+            <p class="lead mb-4">{{profile.short_intro}}</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="container ">
+      <div class="row row-cols-1 row-cols-md-3 p-4">
+        <!-- query the profile project objects -->
+        {% for project in profile.project_set.all %}
+        <div class="col col-break">
+          <div class="card h-100 bg-light text-black">
+            <img src="{{project.imageURL}}" class="card-img-top h-50" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-strong text-dark">{{project.title}}</h5>
+              <p class="card-text text-dark">{{project.body|safe}}</p>
+              <small class="text-muted">Published on {{project.created}}</small>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    </div>
+
+  {% endblock %}
+
+

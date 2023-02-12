@@ -1,0 +1,93 @@
+{% load static  %}
+
+<header>
+  <div class="navbar navbar-nav navbar-light bg-dark shadow-sm">
+    <div class="container align-items-center">
+        <a href="{% url 'profiles' %}" class="py-3  navbar-brand d-flex align-items-center">
+          <strong class="text-light " style="font-size: 45px;font-weight:200; font-family: 'Dongle', sans-serif"><i class="icon fa-solid fa-bold" style="background-color:#212529;font-size: 45px; color:white;"></i>loge</strong>
+        </a>
+        <div class="text-end">
+            <a href="{% url 'profiles' %}">
+              <button type="button" class="btn btn-text logo text-light "style="font-size: 40px;font-weight:200; font-family: 'Dongle', sans-serif"><svg 
+                class="m-auto"
+                style="width:32px; "
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 448 512">
+                <path 
+                  d="M370.7 96.1C346.1 39.5 289.7 0 224 0S101.9 39.5 77.3 96.1C60.9 97.5 48 111.2 48 128v64c0 16.8 12.9 30.5 29.3 31.9C101.9 280.5 158.3 320 224 320s122.1-39.5 146.7-96.1c16.4-1.4 29.3-15.1 29.3-31.9V128c0-16.8-12.9-30.5-29.3-31.9zM336 144v16c0 53-43 96-96 96H208c-53 0-96-43-96-96V144c0-26.5 21.5-48 48-48H288c26.5 0 48 21.5 48 48zM189.3 162.7l-6-21.2c-.9-3.3-3.9-5.5-7.3-5.5s-6.4 2.2-7.3 5.5l-6 21.2-21.2 6c-3.3 .9-5.5 3.9-5.5 7.3s2.2 6.4 5.5 7.3l21.2 6 6 21.2c.9 3.3 3.9 5.5 7.3 5.5s6.4-2.2 7.3-5.5l6-21.2 21.2-6c3.3-.9 5.5-3.9 5.5-7.3s-2.2-6.4-5.5-7.3l-21.2-6zM112.7 316.5C46.7 342.6 0 407 0 482.3C0 498.7 13.3 512 29.7 512H128V448c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64l98.3 0c16.4 0 29.7-13.3 29.7-29.7c0-75.3-46.7-139.7-112.7-165.8C303.9 338.8 265.5 352 224 352s-79.9-13.2-111.3-35.5zM176 448c-8.8 0-16 7.2-16 16v48h32V464c0-8.8-7.2-16-16-16zm96 32c8.8 0 16-7.2 16-16s-7.2-16-16-16s-16 7.2-16 16s7.2 16 16 16z"/>
+                </svg></button>
+            </a>
+            <a href="{% url 'projects' %}">
+              <button type="button" class="btn logo btn-text text-light" style="font-size: 40px;font-weight:200; font-family: 'Dongle', sans-serif">
+                <svg 
+                  class="m-auto"
+                  style="width:32px; "
+                  fill="white"
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 576 512"><path d="M528.3 46.5H388.5c-48.1 0-89.9 33.3-100.4 80.3-10.6-47-52.3-80.3-100.4-80.3H48c-26.5 0-48 21.5-48 48v245.8c0 26.5 21.5 48 48 48h89.7c102.2 0 132.7 24.4 147.3 75 .7 2.8 5.2 2.8 6 0 14.7-50.6 45.2-75 147.3-75H528c26.5 0 48-21.5 48-48V94.6c0-26.4-21.3-47.9-47.7-48.1zM242 311.9c0 1.9-1.5 3.5-3.5 3.5H78.2c-1.9 0-3.5-1.5-3.5-3.5V289c0-1.9 1.5-3.5 3.5-3.5h160.4c1.9 0 3.5 1.5 3.5 3.5v22.9zm0-60.9c0 1.9-1.5 3.5-3.5 3.5H78.2c-1.9 0-3.5-1.5-3.5-3.5v-22.9c0-1.9 1.5-3.5 3.5-3.5h160.4c1.9 0 3.5 1.5 3.5 3.5V251zm0-60.9c0 1.9-1.5 3.5-3.5 3.5H78.2c-1.9 0-3.5-1.5-3.5-3.5v-22.9c0-1.9 1.5-3.5 3.5-3.5h160.4c1.9 0 3.5 1.5 3.5 3.5v22.9zm259.3 121.7c0 1.9-1.5 3.5-3.5 3.5H337.5c-1.9 0-3.5-1.5-3.5-3.5v-22.9c0-1.9 1.5-3.5 3.5-3.5h160.4c1.9 0 3.5 1.5 3.5 3.5v22.9zm0-60.9c0 1.9-1.5 3.5-3.5 3.5H337.5c-1.9 0-3.5-1.5-3.5-3.5V228c0-1.9 1.5-3.5 3.5-3.5h160.4c1.9 0 3.5 1.5 3.5 3.5v22.9zm0-60.9c0 1.9-1.5 3.5-3.5 3.5H337.5c-1.9 0-3.5-1.5-3.5-3.5v-22.8c0-1.9 1.5-3.5 3.5-3.5h160.4c1.9 0 3.5 1.5 3.5 3.5V190z"/></svg>
+              </button>
+            </a>
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'account' %}">
+              <button type="button" class="btn btn-text logo text-light" style="font-size: 40px;font-weight:200; font-family: 'Dongle', sans-serif" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                
+                <img 
+                  src="{{user.profile.imageURL}}" 
+                  alt="" 
+                  class="rounded-circle bg-light" 
+                  width="40" 
+                  height="40">
+              </button>
+            </a>
+<!-- Button trigger modal -->
+<button type="button" class="btn logo" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <svg 
+    fill="white"
+    class="m-auto" 
+    style="width:32px;" 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 576 512">
+      <path d="M534.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L434.7 224 224 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM192 96c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-53 0-96 43-96 96l0 256c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z"/>
+    </svg>
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-body fs-5 text-black text-center" id="exampleModalLabel">Are you sure you want to sign out?</h1>
+        <button type="button" class="btn-close btn-secondary" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+    
+      <div class="modal-footer">
+        <a href="{% url 'logout' %}">
+          <button type="button" class="btn text-danger logo" data-bs-dismiss="modal">Yes</button>
+        </a>
+        <button type="button" class="btn text-secondary" data-bs-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>      
+{% else %}
+<a href="{% url 'login' %}">
+  <button type="button" class="btn btn-text text-light logo" style="font-size: 40px;font-weight:200; font-family: 'Dongle', sans-serif">
+    <svg 
+      fill="white"
+      class="m-auto" 
+      style="width:32px;"
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 576 512">
+        <path 
+          d="M320 32c0-9.9-4.5-19.2-12.3-25.2S289.8-1.4 280.2 1l-179.9 45C79 51.3 64 70.5 64 92.5V448H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H96 288h32V480 32zM256 256c0 17.7-10.7 32-24 32s-24-14.3-24-32s10.7-32 24-32s24 14.3 24 32zm96-128h96V480v32h32 64c17.7 0 32-14.3 32-32s-14.3-32-32-32H512V128c0-35.3-28.7-64-64-64H352v64z"/>
+    </svg>
+  </button>
+</a>
+{% endif %}
+        </div>
+    </div>
+  </div>
+  
+</header>

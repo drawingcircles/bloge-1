@@ -1,0 +1,66 @@
+{% extends 'projects/main.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container col-xxl-8 px-4 py-5">
+  <div class="row g-5 py-5 hero-row align-items-center">
+    <div class="col slideInRight project-img">
+      <img src="{% static 'images/Untitled_Artwork.png' %}" class="project-hero-img img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col justify-content-center">
+      <i class="fa-light fa-font-case"></i>
+      <h1 id="text" class="display-5 fw-bold lh-1 mb-3 slideInLeft" style="font-size: 82px;font-weight:700; font-family: 'Dongle', sans-serif;"><div class="me-3" id="text-effect">
+        Search Projects</div></h1>
+      <p class=" text-light" style="font-size: 40px;font-weight:400; font-family: 'Dongle', sans-serif">Search by project title.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <form class="form" action="{% url 'projects' %}" method="get">
+          <div class="row ">
+            <button type="search" class="m-3 col-2 btn btn-motion badge rounded-pill btn-warning text-dark btn-lg">
+              <svg 
+                class="mb-1 shuttle-btn"
+                style="width:40px;"
+                fill="#183153"
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 512 512">
+                <path d="M96 256H128V512H0V352H32V320H64V288H96V256zM512 352V512H384V256H416V288H448V320H480V352H512zM320 64H352V448H320V416H192V448H160V64H192V32H224V0H288V32H320V64zM288 128H224V192H288V128z"/>
+              </svg>
+            </button>
+            <input value="{{search_query}}" name="search_query" class="rounded-pill text-secondary bg-dark form-control-lg col-sm-6 m-3 col-6" type="text" placeholder="Search projects...">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  <main class="container pt-3 ">
+    <div class="row mb-2">
+      {% for project in projects %}
+      <div class="col-md-6">
+        
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-50 position-relative"> 
+          
+            <div class="col p-4 d-flex flex-column position-static bg-light text-dark">
+              
+              <a href="{% url 'project' project.id %}" class="stretched-link">
+                <div class="col pb-3 h-50">
+                  <img class="card rounded pb-3 " src="{{project.imageURL}}"/>
+                </div>
+              </a>
+              <h2 class="mb-3">{{project.title}}</h3>
+              <h4 class="card-text ">{{project.description}}</h3>
+              <p class="card-text ">Published on: {{project.created}}</p>
+                <p class="card-text">Written by: <a href="{% url 'user-profile' project.owner  %}">{{project.owner.name}}</a>
+                </p>
+            </div>
+        </div>
+      </a>
+      </div>
+      {% endfor %}
+    </main>
+    
+    {% include 'projects/pagination.html' with queryset=projects custom_range=custom_range %}
+
+  {% endblock %}
+

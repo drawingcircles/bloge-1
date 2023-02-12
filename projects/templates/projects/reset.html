@@ -1,0 +1,21 @@
+{% extends 'projects/main.html'%}
+{% block content %}
+
+<main class="formPage my-x1">
+    <div class="content-box">
+        <div class="formWrapper">
+            <h3 class="mx-3 mb-3">
+                Enter New Password
+            </h3>
+            <p class="mx-3 mb-3">
+                Please enter your new passowrd twice so we can verify you typed it in correctly.
+            </p>
+            <form class="mx-3 form" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type='submit' value='Submit'/>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock content %}

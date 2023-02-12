@@ -1,0 +1,34 @@
+{% extends 'projects/main.html' %}
+{% block content %}
+
+<main class="form-signin w-50 m-auto p-5">
+  <form>
+    <h1 class="h3 mb-3 fw-normal pb-3"> Login to<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chat-left-quote pb-3" viewBox="0 0 16 16">
+        <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+        <path d="M7.066 4.76A1.665 1.665 0 0 0 4 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112zm4 0A1.665 1.665 0 0 0 8 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112z"/>
+      </svg>Bloge
+    </h1>
+
+    <div class="form-floating pb-2">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="checkbox m-3">
+      <label>
+        <input type="checkbox" value="remember-me">Remember me
+      </label>
+    </div>
+    <div class="row ">
+    <button class="w-100 btn btn-lg btn-primary col-6 " type="submit">Login</button>
+    <button class="w-100 btn btn-lg btn-secondary col-6 mt-2" type="submit">Sign Up</button>
+    </div>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+  </form>
+</main>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'projects/main.html' %}
+{% load static %}
+
+{% block content %}
+    <main class="container">
+    
+    <div class="row g-5 pt-3">
+        <div class="col-md-8">
+        <article class="blog-post row">
+            <div class="col-4 pb-3">
+                <div class="col-auto d-none d-lg-block">
+                    <img class="card rounded" src="{{project.imageURL}}" width="200" height="250"/>
+                  </div>
+            </div>
+            <h1 class="blog-post-title mb-1">{{project.title}}</h1>
+            <p class="blog-post-meta pb-2">Written on {{project.created}} by <a href="{% url 'user-profile' project.owner.id %}">{{project.owner.name}}</a></p>
+            <hr>
+            <p>{{project.body|safe}}</p>   
+    </div>
+           
+    </main>
+
+{% endblock %}
