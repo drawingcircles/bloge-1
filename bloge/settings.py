@@ -37,7 +37,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'bloge.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'web-production-d9fa.up.railway.app']
 # if not DEBUG:
 #     ALLOWED_HOSTS += [os.environ.get('ALLOWED_HOST')]
 
@@ -99,7 +99,7 @@ WSGI_APPLICATION = 'bloge.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
+DATABASE_URL = os.environ.get('DATABASE_URL')
 
 DATABASES = {
     'default': {
