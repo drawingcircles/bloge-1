@@ -1,6 +1,7 @@
 asgiref==3.5.2
 boto3==1.26.54
 botocore==1.29.54
+dj-database-url==1.2.0
 Django==4.1.1
 django-admin==2.0.1
 django-ckeditor==6.5.1
